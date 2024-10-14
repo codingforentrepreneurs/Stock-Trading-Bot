@@ -1,7 +1,10 @@
-# Stock-Trading-Bot
-Extract data, analyze, and decide on stocks in the market using Django, Celery, TimescaleDB, Jupyter, OpenAI, and more.
+# Stock Trading Bot
+[![Star this repo](https://img.shields.io/github/stars/codingforentrepreneurs/Stock-Trading-Bot?style=social)](https://github.com/codingforentrepreneurs/Stock-Trading-Bot)
 
-__Tech Stack__:
+Learn how to extract data, analyze, and decide on stocks in the market using Django, Celery, TimescaleDB, Jupyter, OpenAI, and more.
+
+
+__Tech Stack__
 - [Python 3.12](https://github.com/python)
 - [Django](https://github.com/django/django) (`pip install "Django>=5.1,<5.2"`)
 - [Django Timescaledb](https://github.com/jamessewell/django-timescaledb) (`pip install django-timescaledb`)
@@ -15,7 +18,7 @@ __Tech Stack__:
 Download the following:
 - [git](https://git-scm.com/)
 - [VSCode](https://code.visualstudio.com/) (or [Cursor](https://cursor.com/))
-- Docker Desktop
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) or Docker Engine via [get.docker.com](https://get.docker.com/) (Linux Install Script)
 - [Python](https://www.python.org/downloads/)
 
 Open a command line (Terminal, VSCode Terminal, Cursor Terminal, Powershell, etc)
