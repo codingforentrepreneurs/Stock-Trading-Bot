@@ -31,7 +31,7 @@ git clone https://github.com/codingforentrepreneurs/Stock-Trading-Bot .
 ```
 
 Checkout the start branch
-```
+```bash
 git checkout start
 rm -rf .git
 ```
@@ -50,24 +50,24 @@ c:\Path\To\Python312\python.exe -m venv venv
 ```
 
 Install requirements
-```
+```bash
 (venv) python -m pip install -r requirements.txt
 ```
 
 Docker Compose Up (for local TimescaleDB and Redis)
-```
+```bash
 docker compose -f compose.yaml up -d
 ```
 > If you don't have Docker, use [TimescaleDB Cloud](tsdb.co/justin) and [Upstash Redis](https://upstash.com/?utm_source=cfe)
 
 Create `.env` in project root
-```
+```bash
 mkdir -p ~/dev/stock-trading-bot
 echo "" >> .env
 ```
 
 Add `DATABASE_URL` and `REDIS_URL` to `.env` (these are based on the `compose.yaml` file):
-```
+```bash
 DATABASE_URL="postgresql://postgres:postgres@localhost:5431/postgres"
 REDIS_URL="redis://localhost:6378"
 ```
