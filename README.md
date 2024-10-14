@@ -34,6 +34,9 @@ Checkout the start branch
 ```bash
 git checkout start
 rm -rf .git
+git init
+git add --all
+git commit -m "It's my bot now"
 ```
 
 Create a Python vitual environment
