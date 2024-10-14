@@ -11,6 +11,7 @@ __Tech Stack__
 - [Python requests](https://github.com/psf/requests) (`pip install requests`)
 - [Jupyter](https://jupyter.org/) (`pip install jupyter`)
 - [Psycopg Binary Release](https://pypi.org/project/psycopg/) (`pip install "psycopg[binary]"`)
+- [Alpha Vantage Stock Market Data API](alphavantage.co/) ([docs](https://www.alphavantage.co/documentation/))
 - More to come
 
 ## Getting Started
