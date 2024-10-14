@@ -3,17 +3,18 @@ Extract data, analyze, and decide on stocks in the market using Django, Celery, 
 
 __Tech Stack__:
 - [Python 3.12](https://github.com/python)
-- [Django](https://github.com/django/django) (`pip install "Django>-5.1,<5.2"`)
+- [Django](https://github.com/django/django) (`pip install "Django>=5.1,<5.2"`)
 - [Django Timescaledb](https://github.com/jamessewell/django-timescaledb) (`pip install django-timescaledb`)
 - [Python requests](https://github.com/psf/requests) (`pip install requests`)
 - [Jupyter](https://jupyter.org/) (`pip install jupyter`)
+- [Psycopg Binary Release](https://pypi.org/project/psycopg/) (`pip install "psycopg[binary]"`)
 - More to come
 
 ## Getting Started
 
 Download the following:
 - [git](https://git-scm.com/)
-- [VSCode[(https://code.visualstudio.com/) (or [Cursor](https://cursor.com/))
+- [VSCode](https://code.visualstudio.com/) (or [Cursor](https://cursor.com/))
 - Docker Desktop
 - [Python](https://www.python.org/downloads/)
 

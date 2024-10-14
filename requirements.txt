@@ -1,0 +1,5 @@
+Django>=5.1,<5.2
+django-timescaledb
+jupyter
+requests
+psycopg[binary]
