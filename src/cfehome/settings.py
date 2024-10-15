@@ -84,7 +84,10 @@ DATABASE_URL = config('DATABASE_URL', cast=str, default='')
 if DATABASE_URL != "":
     import dj_database_url
     DATABASES = {
-        "default": dj_database_url.config(default=DATABASE_URL)
+        "default": dj_database_url.config(
+            default=DATABASE_URL,
+            engine='timescale.db.backends.postgresql',
+        )
     }
 
 
