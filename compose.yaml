@@ -1,5 +1,6 @@
 services:
   db:
+    restart: always
     image: timescale/timescaledb:latest-pg15
     ports:
       - "5431:5432"
@@ -10,6 +11,7 @@ services:
     volumes:
       - db-data:/var/lib/postgresql/data
   redis:
+    restart: always
     image: redis:latest
     ports:
       - "6378:6379"
