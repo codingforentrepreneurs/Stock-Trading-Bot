@@ -131,3 +131,6 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+ALPHA_VANTAGE_API_KEY = config("ALPHA_VANTAGE_API_KEY", default="", cast=str)
