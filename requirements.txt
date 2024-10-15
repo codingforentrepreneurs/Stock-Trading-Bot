@@ -3,3 +3,4 @@ django-timescaledb
 jupyter
 requests
 psycopg[binary]
+python-decouple
