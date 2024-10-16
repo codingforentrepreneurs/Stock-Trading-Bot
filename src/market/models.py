@@ -9,6 +9,10 @@ class Company(models.Model):
     name = models.CharField(max_length=120)
     ticker = models.CharField(max_length=10, unique=True, db_index=True)
     active = models.BooleanField(default=True)
+
+    @property
+    def symbol(self):
+        return self.ticker
  
 
 class StockQuote(models.Model):
@@ -16,7 +20,7 @@ class StockQuote(models.Model):
     company = models.ForeignKey(
         Company,
         on_delete=models.CASCADE,
-        related_name="stock_prices"
+        related_name="stock_prices",
     )
     open_price = models.DecimalField(max_digits=10, decimal_places=4)
     close_price = models.DecimalField(max_digits=10, decimal_places=4)
@@ -29,3 +33,6 @@ class StockQuote(models.Model):
 
     objects = models.Manager()
     timescale = TimescaleManager()
+
+    class Meta:
+        unique_together = [('company', 'time')]
