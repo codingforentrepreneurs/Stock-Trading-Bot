@@ -11,8 +11,12 @@ __Tech Stack__
 - [Python requests](https://github.com/psf/requests) (`pip install requests`)
 - [Jupyter](https://jupyter.org/) (`pip install jupyter`)
 - [Psycopg Binary Release](https://pypi.org/project/psycopg/) (`pip install "psycopg[binary]"`)
-- [Alpha Vantage Stock Market Data API](alphavantage.co/) ([docs](https://www.alphavantage.co/documentation/))
+- [Polygon.io](https://polygon.io/?utm_source=cfe&utm_medium=github&utm_campaign=cfe-github) ([docs](https://polygon.io/docs/stocks/getting-started?utm_source=cfe&utm_medium=github&utm_campaign=cfe-github))
 - More to come
+
+## Tutorial
+- In-depth setup [https://youtu.be/aApDye1TWJ4]
+- Full tutorial (coming soon)
 
 ## Getting Started
 
