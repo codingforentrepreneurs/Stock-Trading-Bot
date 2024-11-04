@@ -15,7 +15,7 @@ __Tech Stack__
 - More to come
 
 ## Tutorial
-- In-depth setup [https://youtu.be/aApDye1TWJ4]
+- In-depth setup [on YouTube (https://youtu.be/aApDye1TWJ4)](https://youtu.be/aApDye1TWJ4)
 - Full tutorial (coming soon)
 
 ## Getting Started
