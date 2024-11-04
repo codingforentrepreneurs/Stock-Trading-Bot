@@ -11,6 +11,7 @@ __Tech Stack__
 - [Python requests](https://github.com/psf/requests) (`pip install requests`)
 - [Jupyter](https://jupyter.org/) (`pip install jupyter`)
 - [Psycopg Binary Release](https://pypi.org/project/psycopg/) (`pip install "psycopg[binary]"`)
+- [Python Requests](https://github.com/HBNetwork/python-decouple) to load environment variables (e.g. `.env`) with type casting and default values.
 - [Polygon.io](https://polygon.io/?utm_source=cfe&utm_medium=github&utm_campaign=cfe-github) ([docs](https://polygon.io/docs/stocks/getting-started?utm_source=cfe&utm_medium=github&utm_campaign=cfe-github))
 - More to come
 
