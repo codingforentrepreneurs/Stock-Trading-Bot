@@ -17,6 +17,7 @@ __Tech Stack__
 
 ## Tutorial
 - In-depth setup [on YouTube (https://youtu.be/aApDye1TWJ4)](https://youtu.be/aApDye1TWJ4)
+- [Django Setup for use in Jupyter Notebooks (short + code)](https://www.codingforentrepreneurs.com/shorts/django-setup-for-use-in-jupyter-notebooks)
 - Full tutorial (coming soon)
 
 ## Getting Started
