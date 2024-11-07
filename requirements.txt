@@ -4,3 +4,4 @@ jupyter
 requests
 psycopg[binary]
 python-decouple
+pytz
