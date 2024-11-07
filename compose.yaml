@@ -10,7 +10,7 @@ services:
     volumes:
       - db-data:/var/lib/postgresql/data
   redis:
-    image: redis:latest
+    image: redis:latest 
     ports:
       - "6378:6379"
     volumes:
