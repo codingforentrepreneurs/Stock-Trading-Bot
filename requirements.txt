@@ -6,3 +6,7 @@ requests
 psycopg[binary]
 python-decouple
 pytz
+Celery
+Redis
+django-celery-beat 
+django-celery-results
