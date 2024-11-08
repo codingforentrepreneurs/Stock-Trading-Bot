@@ -51,7 +51,8 @@ class PolygonAPIClient:
         }
     
     def generate_url(self, pass_auth=False):
-        path = f"/v2/aggs/ticker/{self.ticker}/range/{self.multiplier}/{self.timespan}/{self.from_date}/{self.to_date}"
+        ticker = f"{self.ticker}".upper()
+        path = f"/v2/aggs/ticker/{ticker}/range/{self.multiplier}/{self.timespan}/{self.from_date}/{self.to_date}"
         url = f"https://api.polygon.io{path}"
         params = self.get_params()
         encoded_params = urlencode(params)
@@ -70,7 +71,9 @@ class PolygonAPIClient:
 
     def get_stock_data(self):
         data = self.fetch_data()
-        results = data['results']
+        results = data.get('results') or None
+        if results is None:
+            raise Exception(f"Ticker {self.ticker} has no results")
         dataset = []
         for result in results:
             dataset.append(

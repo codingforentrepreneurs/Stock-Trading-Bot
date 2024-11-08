@@ -38,6 +38,6 @@ def sync_company_stock_quotes(company_id, days_ago = 32, date_format = "%Y-%m-%d
 
 def sync_stock_data():
     Company = apps.get_model("market", "Company")
-    companies = Company.objects.filter(active=True).values_list('id')
+    companies = Company.objects.filter(active=True).values_list('id', flat=True)
     for company_id in companies:
         sync_company_stock_quotes(company_id)
