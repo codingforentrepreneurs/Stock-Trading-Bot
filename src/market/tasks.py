@@ -1,3 +1,4 @@
+from celery import shared_task
 from datetime import timedelta
 
 from django.apps import apps 
@@ -8,6 +9,7 @@ import helpers.clients as helper_clients
 from .utils import batch_insert_stock_data
     
 
+@shared_task
 def sync_company_stock_quotes(company_id, days_ago = 32, date_format = "%Y-%m-%d", verbose=False):
     Company = apps.get_model("market", "Company")
     try:
@@ -35,9 +37,9 @@ def sync_company_stock_quotes(company_id, days_ago = 32, date_format = "%Y-%m-%d
     
     
 
-
+@shared_task
 def sync_stock_data():
     Company = apps.get_model("market", "Company")
     companies = Company.objects.filter(active=True).values_list('id', flat=True)
     for company_id in companies:
-        sync_company_stock_quotes(company_id)
+        sync_company_stock_quotes.delay(company_id)
