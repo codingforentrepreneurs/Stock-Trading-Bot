@@ -21,9 +21,10 @@ def sync_company_stock_quotes(company_id, days_ago = 32, date_format = "%Y-%m-%d
     company_ticker = company_obj.ticker
     if company_ticker is None:
         raise Exception(f"{company_ticker} invalid")
-    end_date = timezone.now()
-    start_date = end_date - timedelta(days=days_ago)
-    to_date = end_date.strftime(date_format)
+    now = timezone.now()
+    start_date = now - timedelta(days=days_ago)
+    to_date = start_date + timedelta(days=days_ago + 1)
+    to_date = to_date.strftime(date_format)
     from_date = start_date.strftime(date_format)
     client = helper_clients.PolygonAPIClient(
         ticker=company_ticker,
@@ -43,3 +44,17 @@ def sync_stock_data(days_ago=2):
     companies = Company.objects.filter(active=True).values_list('id', flat=True)
     for company_id in companies:
         sync_company_stock_quotes.delay(company_id, days_ago=days_ago)
+
+
+@shared_task
+def sync_historical_stock_data(years_ago=5, company_ids=[]):
+    Company = apps.get_model("market", "Company")
+    qs = Company.objects.filter(active=True)
+    if len(company_ids) > 0:
+        qs = qs.filter(id__in=company_ids)
+    companies = qs.values_list('id', flat=True)
+    for company_id in companies:
+        days_starting_ago = 30 * 12 * years_ago
+        batch_size = 30
+        for i in range(30, days_starting_ago, batch_size):
+            sync_company_stock_quotes.delay(company_id, days_ago=i)
