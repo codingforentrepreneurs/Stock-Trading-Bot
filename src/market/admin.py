@@ -17,7 +17,7 @@ class StockQuoteAdmin(admin.ModelAdmin):
         ('time', DateTimeRangeFilterBuilder()),
         'time'
     ]
-    readonly_fields = ['localized_time', 'time']
+    readonly_fields = ['localized_time', 'time','raw_timestamp']
 
     def localized_time(self, obj):
         tz_name = "US/Eastern"

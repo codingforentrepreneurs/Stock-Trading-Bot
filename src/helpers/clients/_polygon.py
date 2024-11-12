@@ -9,6 +9,7 @@ from decouple import config
 
 POLOGYON_API_KEY = config("POLOGYON_API_KEY", default=None, cast=str)
 
+
 def transform_polygon_result(result):
     unix_timestamp = result.get('t') / 1000.0
     utc_timestamp = datetime.fromtimestamp(unix_timestamp, tz=pytz.timezone('UTC'))
@@ -20,6 +21,7 @@ def transform_polygon_result(result):
         'number_of_trades': result['n'],
         'volume': result['v'],
         'volume_weighted_average': result['vw'],
+        'raw_timestamp': result.get('t'),
         'time': utc_timestamp,
     }
 

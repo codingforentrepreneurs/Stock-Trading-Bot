@@ -41,6 +41,7 @@ class StockQuote(models.Model):
     number_of_trades = models.BigIntegerField(blank=True, null=True)
     volume = models.BigIntegerField()
     volume_weighted_average = models.DecimalField(max_digits=10, decimal_places=6)
+    raw_timestamp = models.CharField(max_length=120, null=True, blank=True, help_text="Non transformed timestamp string or int or float")
     time = TimescaleDateTimeField(interval="1 week")
 
     objects = models.Manager()
