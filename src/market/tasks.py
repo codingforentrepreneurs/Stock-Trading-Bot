@@ -47,7 +47,7 @@ def sync_stock_data(days_ago=2):
 
 
 @shared_task
-def sync_historical_stock_data(years_ago=5, company_ids=[]):
+def sync_historical_stock_data(years_ago=5, company_ids=[], use_celery=True, verbose=False):
     Company = apps.get_model("market", "Company")
     qs = Company.objects.filter(active=True)
     if len(company_ids) > 0:
@@ -57,4 +57,11 @@ def sync_historical_stock_data(years_ago=5, company_ids=[]):
         days_starting_ago = 30 * 12 * years_ago
         batch_size = 30
         for i in range(30, days_starting_ago, batch_size):
-            sync_company_stock_quotes.delay(company_id, days_ago=i)
+            if verbose:
+                print("Historical sync days ago", i)
+            if use_celery:
+                sync_company_stock_quotes.delay(company_id, days_ago=i, verbose=verbose)
+            else:
+                sync_company_stock_quotes(company_id, days_ago=i,verbose=verbose)
+            if verbose:
+                print(i, "done\n")

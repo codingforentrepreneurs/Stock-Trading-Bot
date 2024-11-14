@@ -248,3 +248,46 @@ def calculate_rsi(ticker, days=28, queryset=None, period=14):
         'period': period,
         'days': days,
     }
+
+
+def get_stock_indicators(ticker = "AAPL", days=30):
+    queryset = get_daily_stock_quotes_queryset(ticker, days=days)
+    if queryset.count() == 0:
+        raise Exception(f"Data for {ticker} not found")
+    averages = get_daily_moving_averages(ticker, days=days, queryset=queryset)
+    price_target = get_price_target(ticker, days=days, queryset=queryset)
+    volume_trend = get_volume_trend(ticker, days=days, queryset=queryset)
+    rsi_data = calculate_rsi(ticker, days=days, period=14)
+    signals = []
+    if averages.get('ma_5') > averages.get('ma_20'):
+        signals.append(1)
+    else:
+        signals.append(-1)
+    if price_target.get('current_price') < price_target.get('conservative_target'):
+        signals.append(1)
+    else:
+        signals.append(-1)
+    if volume_trend.get("volume_change_percent") > 20:
+        signals.append(1)
+    elif volume_trend.get("volume_change_percent") < -20:
+        signals.append(-1)
+    else:
+        signals.append(0)
+    rsi = rsi_data.get('rsi')
+    if rsi > 70:
+        signals.append(-1)  # Overbought
+    elif rsi < 30:
+        signals.append(1) # Oversold
+    else:
+        signals.append(0)
+    return {
+        "score": sum(signals),
+        "ticker": ticker,
+        "indicators": {
+            **averages,
+            **price_target,
+            **volume_trend,
+            **rsi_data,
+        }
+        
+    }
