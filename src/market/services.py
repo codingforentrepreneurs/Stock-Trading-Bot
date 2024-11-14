@@ -147,19 +147,22 @@ def get_volume_trend(ticker, days=28, queryset=None):
         'volume_change_percent': float(volume_change)
     }
 
-def calculate_rsi(ticker, days=28, queryset=None):
+def calculate_rsi(ticker, days=28, queryset=None, period=14):
     """
     Calculate Relative Strength Index (RSI) using Django ORM.
     
     Args:
         ticker (str): Stock ticker symbol
+        days (int): Days in the price data (default: 28)
+        queryset (list): Stock Quote querset
         period (int): RSI period (default: 14)
-    
+        
     Returns:
         dict: RSI value and component calculations
     """
     # Get daily price data
-    period = int(days / 4)
+    if period is None:
+        period = int(days / 4)
     if queryset is None:
         queryset = get_daily_stock_quotes_queryset(ticker, days=days, use_bucket=True)
 
