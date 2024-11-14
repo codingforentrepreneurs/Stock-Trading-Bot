@@ -134,7 +134,6 @@ def get_volume_trend(ticker, days=28, queryset=None):
 
     if not data:
         return None
-    print(data)
     vol = data.volume
     avg_vol = data.avg_volume
     volume_change = 0
