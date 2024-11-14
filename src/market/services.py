@@ -70,8 +70,8 @@ def get_daily_moving_averages(ticker, days=28, queryset=None):
     if ma_5 <= 0 or ma_20 <= 0:
         return None
     return {
-        "ma_5":  round(ma_5, 4),
-        "ma_20":  round(ma_20, 4)
+        "ma_5":  float(round(ma_5, 4)),
+        "ma_20":  float(round(ma_20, 4))
     }
 
 
@@ -100,7 +100,6 @@ def get_price_target(ticker, days=28, queryset=None):
     
     if not daily_data:
         return None
-        
     current_price = float(daily_data['current_price'])
     avg_price = float(daily_data['avg_price'])
     price_range = float(daily_data['highest']) - float(daily_data['lowest'])
