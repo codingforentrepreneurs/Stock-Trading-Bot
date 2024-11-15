@@ -14,7 +14,7 @@ __Tech Stack__
 - [Python requests](https://github.com/psf/requests) (`pip install requests`)
 - [Jupyter](https://jupyter.org/) (`pip install jupyter`)
 - [Psycopg Binary Release](https://pypi.org/project/psycopg/) (`pip install "psycopg[binary]"`)
-- [Python Requests](https://github.com/HBNetwork/python-decouple) to load environment variables (e.g. `.env`) with type casting and default values.
+- [Python Decouple](https://github.com/HBNetwork/python-decouple) to load environment variables (e.g. `.env`) with type casting and default values.
 - [Polygon.io](https://polygon.io/?utm_source=cfe&utm_medium=github&utm_campaign=cfe-github) ([docs](https://polygon.io/docs/stocks/getting-started?utm_source=cfe&utm_medium=github&utm_campaign=cfe-github))
 - [Alpha Vantage]( https://www.alphavantage.co/?utm_source=cfe&utm_medium=github&utm_campaign=cfe-github) ([docs](https://www.alphavantage.co/documentation/?utm_source=cfe&utm_medium=github&utm_campaign=cfe-github))
 - [OpenAI]( https://www.openai.com/?utm_source=cfe&utm_medium=github&utm_campaign=cfe-github)
@@ -22,7 +22,7 @@ __Tech Stack__
 ## Tutorial
 - In-depth setup [on YouTube (https://youtu.be/aApDye1TWJ4)](https://youtu.be/aApDye1TWJ4)
 - [Django Setup for use in Jupyter Notebooks (short + code)](https://www.codingforentrepreneurs.com/shorts/django-setup-for-use-in-jupyter-notebooks)
-- Full tutorial (coming soon)
+- Full tutorial [on YouTube (https://youtu.be/O3O1z5hTdUM)](https://youtu.be/O3O1z5hTdUM)
 
 ## Getting Started
 
